@@ -57,33 +57,26 @@ def check_properties(f_values):
     }
     return properties
 
-# Основна частина програми
+
 if __name__ == "__main__":
-    # Значення функції (F = 00100100)
     f_values = [0, 0, 1, 0, 0, 1, 0, 0]
     
-    # Побудова таблиці істинності
     table = build_truth_table()
     
-    # Обчислення значень функції для таблиці істинності
     truth_table = calculate_function_values(table, f_values)
     print("Таблиця істинності:")
     for row in truth_table:
         print(row)
     
-    # Пошук ДДНФ
     ddnf = find_ddnf(table, f_values)
     print("\nДДНФ:", ddnf)
     
-    # Пошук ДКНФ
     dknf = find_dknf(table, f_values)
     print("\nДКНФ:", dknf)
     
-    # Поліном Жегалкіна
     zhegalkin = zhegalkin_polynomial(f_values)
     print("\nПоліном Жегалкіна:", zhegalkin)
     
-    # Перевірка властивостей
     properties = check_properties(f_values)
     print("\nВластивості функції:")
     for prop, value in properties.items():
